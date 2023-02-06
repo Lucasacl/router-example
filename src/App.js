@@ -1,6 +1,10 @@
 import { Link, NavLink, Outlet } from "react-router-dom";
 
 const App = () => {
+  const user = {
+    name: "Jonas",
+    age: 25,
+  };
   return (
     <>
       <header>
@@ -11,6 +15,15 @@ const App = () => {
           </Link>
           <NavLink className="item" to="/dashboard">
             dashboard
+          </NavLink>
+          <NavLink className="item" to={`profile/${user.name}/${user.age}`}>
+            Profile
+          </NavLink>
+          <NavLink className="item" to="/login">
+            Login
+          </NavLink>
+          <NavLink className="item" to="/stocks">
+            Stocks
           </NavLink>
         </nav>
       </header>
